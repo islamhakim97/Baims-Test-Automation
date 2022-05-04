@@ -2,6 +2,7 @@ package com.Baims.pages;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -26,6 +27,8 @@ public class HomePage extends testBase{
 	//Put Methods Of The HomePage with PageFactory Object Technique
 	public boolean BeginisDisplayed()
 	{
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		js.executeScript("arguments[0].style.border='3px solid purple'", Begin);
 		return Begin.isDisplayed();
 	}
 

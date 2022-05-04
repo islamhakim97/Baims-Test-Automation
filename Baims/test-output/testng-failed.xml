@@ -5,10 +5,8 @@
     <classes>
       <class name="com.Baims.testcases.LoginPageTest">
         <methods>
-          <include name="CheckLoginwithPhoneNumber"/>
-          <include name="CheckLoginwithTwitter"/>
           <include name="setup"/>
-          <include name="checkForgotPasswordFunctionality"/>
+          <include name="CheckLoginwithInvalidPasswordOrmail" invocation-numbers="0 1 2"/>
           <include name="CheckLoginwithGoogle"/>
           <include name="tearDown"/>
         </methods>

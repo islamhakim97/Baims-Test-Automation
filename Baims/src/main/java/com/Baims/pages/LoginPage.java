@@ -133,7 +133,7 @@ public class LoginPage extends testBase {
 		
 	}
 
-    public void performValidLogin(String mail,String pass) throws IOException
+    public HomePage performValidLogin(String mail,String pass) throws IOException
     {
     	
         goToLoginPage();
@@ -148,7 +148,7 @@ public class LoginPage extends testBase {
 		signin.click();
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 	
-		//return new HomePage();
+		return new HomePage();
     }
     //Forgot password?
     public void checkForgotPassword()

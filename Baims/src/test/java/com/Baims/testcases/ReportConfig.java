@@ -20,7 +20,7 @@ public class ReportConfig extends testBase {
 	@BeforeSuite
 	public void start()
 	{
-		extent= new ExtentReports("/Volumes/IslamHakim/AlgorizaTestAutomationInternship/FirstMonthProject/Baims Automation/Baims-Test-Automation/Baims/TestReport/BaimsReport.html",true);
+		extent= new ExtentReports("/Volumes/IslamHakim/AlgorizaTestAutomationInternship/FirstMonthProject/Baims Automation/Baims-Test-Automation/Baims/TestReport//BaimsReport.html",true);
 		extent.addSystemInfo("OS","MAC");
 		extent.addSystemInfo("Owner","Islam Hakim");
 		extent.addSystemInfo("TestName","Baims.com");

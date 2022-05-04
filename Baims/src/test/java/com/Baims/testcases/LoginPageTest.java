@@ -40,8 +40,8 @@ public class LoginPageTest extends testBase {
 			TestUtils.TakeVideo(method.getName());
 			TestUtils.Recorder.start();
 			//log TestCases Names to Report
-			logger=extent.startTest(method.getName());
 			loginPage.getMainPage();
+			logger=extent.startTest(method.getName());
 			
 
 		    
@@ -64,8 +64,8 @@ public class LoginPageTest extends testBase {
 			logger.log(LogStatus.PASS, "<a href='"+result.getName()+".png"+"'><span class='label info'>Download Snapshot</span></a>");
 				//Add Video to the Report
 				logger.log(LogStatus.PASS, "<a href='"+result.getName()+".mov"+"'><span class='label info'>Download Video</span></a>");
-			TestUtils.Recorder.stop();
-				
+			
+			
 			}
 			else if(result.getStatus()==ITestResult.FAILURE)
 			{
@@ -74,28 +74,33 @@ public class LoginPageTest extends testBase {
 				logger.log(LogStatus.FAIL, "<a href='"+result.getName()+".png"+"'><span class='label info'>Download Snapshot</span></a>");
 				//Add Video to the Report
 				logger.log(LogStatus.PASS, "<a href='"+result.getName()+".mov"+"'><span class='label info'>Download Video</span></a>");
+				
+				
 			}
 			else if(result.getStatus()==ITestResult.SKIP)
 			{
 				logger.log(LogStatus.SKIP, "Test Skipped");
+				
+				
 			}
 			
              driver.quit();
+           
      		//driver.close();
 			
 		}
     	//Login TCs
-		//@Test(priority=1) //[1-pass]
+		@Test(priority=1) //[1-pass]
 		public void PerformValidLoginTest() throws IOException
 		{
 			String validUser=prop.getProperty("username");
 			String validpass=prop.getProperty("password");
-			loginPage.performValidLogin(validUser,validpass);
-			boolean Ar = loginPage.signinIsDisplayed();
-			Assert.assertEquals( Ar, false,"Login Fail , In correct Username Or Password");
+			homePage=loginPage.performValidLogin(validUser,validpass);
+			boolean Ar = homePage.BeginisDisplayed();
+			Assert.assertTrue( Ar, "Login Fail , In correct Username Or Password");
 		}
 		
-		//@Test(priority=2,dataProvider="testLoginData")//,dataProvider="testLoginData" [4 fail]
+		@Test(priority=2,dataProvider="testLoginData")//,dataProvider="testLoginData" [4 fail]
 		public void CheckLoginwithInvalidPasswordOrmail(String mail,String pass) throws IOException//String fname,String lname
 		{
 		  loginPage.performLogin(mail,pass);
@@ -105,7 +110,7 @@ public class LoginPageTest extends testBase {
 			
 		}
 		//Forgot Password Functionality
-		@Test(priority=3) //[2-pass]
+		//@Test(priority=3) //[2-pass]
 		public void checkForgotPasswordFunctionality()
 		{
 			loginPage.checkForgotPassword();
