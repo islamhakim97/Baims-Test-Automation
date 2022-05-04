@@ -113,10 +113,11 @@ public class LoginPage extends testBase {
 	{
 		driver.get("https://baims.com/") ;
 		
-		//changeLanguage.click();
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
 	public void performLogin(String mail,String pass) throws IOException
 	{
+		
 		goToLoginPage();
 		js.executeScript("arguments[0].style.border='3px solid purple'", loginUsingMaileng);
 		loginUsingMaileng.click();
@@ -132,11 +133,13 @@ public class LoginPage extends testBase {
 		
 	}
 
-    public HomePage performValidLogin(String mail,String pass) throws IOException
+    public void performValidLogin(String mail,String pass) throws IOException
     {
+    	
         goToLoginPage();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         js.executeScript("arguments[0].style.border='3px solid purple'", loginUsingMaileng);
-    	loginUsingMaileng.click();
+    	loginUsingMaileng.click();	
 		js.executeScript("arguments[0].style.border='3px solid purple'", email);
 		email.sendKeys(mail);
 		js.executeScript("arguments[0].style.border='3px solid purple'", password);
@@ -145,12 +148,12 @@ public class LoginPage extends testBase {
 		signin.click();
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 	
-		return new HomePage();
+		//return new HomePage();
     }
     //Forgot password?
     public void checkForgotPassword()
     {
-    	 getMainPage();
+    	
     	 goToLoginPage();
     	 
          js.executeScript("arguments[0].style.border='3px solid purple'", loginUsingMaileng);
@@ -188,15 +191,16 @@ public class LoginPage extends testBase {
     
     public void goToLoginPage()
     {
+    	 getMainPage();
     	js.executeScript("arguments[0].style.border='3px solid purple'", kuwit);
     	kuwit.click();
     	driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
     	js.executeScript("arguments[0].style.border='3px solid purple'", changeLanguage);
     	changeLanguage.click();
-    	driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+    	driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
     	js.executeScript("arguments[0].style.border='3px solid purple'", English);
     	English.click();
-		driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(25,TimeUnit.SECONDS);
 
     	js.executeScript("arguments[0].style.border='3px solid purple'", LoginBtn);
     	LoginBtn.click();
@@ -223,6 +227,7 @@ public class LoginPage extends testBase {
     	next.click();
     	gmailpass.sendKeys("01112330219");
     	js.executeScript("arguments[0].style.border='3px solid purple'", gmailpass);
+    	driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
     	passnext.click();
     	driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
     	// Close the new window, if that window no more required
@@ -254,6 +259,8 @@ public class LoginPage extends testBase {
     	js.executeScript("arguments[0].style.border='3px solid purple'", twitterpassword);
     	twitterpassword.click();
     	gmailpass.sendKeys("test@123!");
+    	driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+
     	js.executeScript("arguments[0].style.border='3px solid purple'", twitterSignin);
     	twitterSignin.click();
     	driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);

@@ -75,7 +75,7 @@ public class LoginPageTest extends testBase {
 				//Add Video to the Report
 				logger.log(LogStatus.PASS, "<a href='"+result.getName()+".mov"+"'><span class='label info'>Download Video</span></a>");
 			}
-			else
+			else if(result.getStatus()==ITestResult.SKIP)
 			{
 				logger.log(LogStatus.SKIP, "Test Skipped");
 			}
@@ -85,17 +85,17 @@ public class LoginPageTest extends testBase {
 			
 		}
     	//Login TCs
-		@Test(priority=1) //[1-pass]
-		public void performValidLoginTest() throws IOException
+		//@Test(priority=1) //[1-pass]
+		public void PerformValidLoginTest() throws IOException
 		{
 			String validUser=prop.getProperty("username");
 			String validpass=prop.getProperty("password");
-			homePage=loginPage.performValidLogin(validUser,validpass);
-			boolean Ar = homePage.BeginisDisplayed();
-			Assert.assertEquals( Ar, true,"Login Fail , In correct Username Or Password");
+			loginPage.performValidLogin(validUser,validpass);
+			boolean Ar = loginPage.signinIsDisplayed();
+			Assert.assertEquals( Ar, false,"Login Fail , In correct Username Or Password");
 		}
 		
-		@Test(priority=2,dataProvider="testLoginData")//,dataProvider="testLoginData" [4 fail]
+		//@Test(priority=2,dataProvider="testLoginData")//,dataProvider="testLoginData" [4 fail]
 		public void CheckLoginwithInvalidPasswordOrmail(String mail,String pass) throws IOException//String fname,String lname
 		{
 		  loginPage.performLogin(mail,pass);
@@ -117,7 +117,7 @@ public class LoginPageTest extends testBase {
 		@Test(priority=4)//[3-pass]
 		public void CheckLoginwithGoogle()
 		{
-			loginPage.getMainPage();
+			
 			loginPage.goToLoginPage();
 			loginPage.signinWithGoogleWindow();
 			boolean ar=loginPage.signinIsDisplayed();
@@ -128,7 +128,7 @@ public class LoginPageTest extends testBase {
 		@Test(priority=5)//[4-pass]
 	    public void CheckLoginwithTwitter()
 		{
-		  loginPage.getMainPage();
+		  
 		  loginPage.goToLoginPage();
 		  loginPage.signinWithTwitterleWindow();
 		  boolean ar=loginPage.signinIsDisplayed();
@@ -139,7 +139,7 @@ public class LoginPageTest extends testBase {
 	   @Test(priority=6) //[5-pass]
 		 public void CheckLoginwithPhoneNumber()
 			{
-			  loginPage.getMainPage();
+			 
 			  loginPage.goToLoginPage();
 			  loginPage.signinUsingPhoneNumberWindow();;
 			  boolean ar=loginPage.verifyCode();

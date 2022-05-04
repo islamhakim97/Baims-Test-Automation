@@ -29,8 +29,6 @@
       
  <test thread-count="5" name="End To End Test with Chrome browser">
 
-<parameter name="browser" value="chrome"></parameter>
-<parameter name="URL" value="https://www.Baims.com/"></parameter>
     <classes>
      <class name="com.Baims.testcases.LoginPageTest"> </class>
       <class name="com.Baims.testcases.ReportConfig"> </class>
@@ -39,7 +37,7 @@
       
           </classes> 
   </test> 
-</suite> <!-- Facebook Application Test -->
+</suite> <!-- Baims Application Test -->
 
   
   
