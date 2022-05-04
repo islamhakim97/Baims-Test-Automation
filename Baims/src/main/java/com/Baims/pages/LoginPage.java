@@ -209,6 +209,7 @@ public class LoginPage extends testBase {
     	// Perform the click operation that opens new window
     	js.executeScript("arguments[0].style.border='3px solid purple'", signInWithGoogle);
     	signInWithGoogle.click();
+    	driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
 
     	// Switch to new window opened
     	for(String winHandle : driver.getWindowHandles()){

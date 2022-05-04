@@ -6,7 +6,7 @@
       <class name="com.Baims.testcases.LoginPageTest">
         <methods>
           <include name="setup"/>
-          <include name="checkForgotPasswordFunctionality"/>
+          <include name="CheckLoginwithGoogle"/>
           <include name="tearDown"/>
         </methods>
       </class> <!-- com.Baims.testcases.LoginPageTest -->

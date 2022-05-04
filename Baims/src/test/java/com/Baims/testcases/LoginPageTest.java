@@ -14,6 +14,7 @@ import com.Baims.pages.HomePage;
 import com.Baims.pages.LoginPage;
 import com.Baims.util.TestUtils;
 import com.Base.com.testBase;
+import com.relevantcodes.extentreports.LogStatus;
 
 import atu.testrecorder.exceptions.ATUTestRecorderException;
 
@@ -27,7 +28,7 @@ public class LoginPageTest extends testBase {
 	LoginPage loginPage;
 	HomePage homePage;
 	
-	 //@Parameters({"browser"})   //{} means defined
+	
 	    
 		@BeforeMethod
 		public void setup(Method method) throws IOException , ATUTestRecorderException                            //Method method,String browser
@@ -35,10 +36,13 @@ public class LoginPageTest extends testBase {
 		{
 			initialization("chrome");
 		    loginPage=new LoginPage();// after you initialize your driver
-			//TestUtils.TakeVideo(method.getName());
-			//TestUtils.Recorder.start();
+		    //Start Take Video :
+			TestUtils.TakeVideo(method.getName());
+			TestUtils.Recorder.start();
+			//log TestCases Names to Report
+			logger=extent.startTest(method.getName());
 			loginPage.getMainPage();
-			//driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+			
 
 		    
 		}
@@ -47,15 +51,41 @@ public class LoginPageTest extends testBase {
 		public void tearDown(Method method,ITestResult result) throws IOException, ATUTestRecorderException //ITestResult is TestNG listener to log test status[pass|fail|skipped]
 
 		{
-			//driver.manage().timeouts().implicitlyWait(40,TimeUnit.SECONDS);
-
-			//TestUtils.TakePicture(method.getName());
+			
+           // Stop Video and Take SnapShot:
+			TestUtils.TakePicture(method.getName());
+			TestUtils.Recorder.stop();
+		  //** Log Test Status to the Report:
+			//*** For adding Test Status To the Extent Report:
+			if(result.getStatus()==ITestResult.SUCCESS)
+			{
+				logger.log(LogStatus.PASS, "Test Pass");
+				//Add Snapshots to the Report in case of success
+			logger.log(LogStatus.PASS, "<a href='"+result.getName()+".png"+"'><span class='label info'>Download Snapshot</span></a>");
+				//Add Video to the Report
+				logger.log(LogStatus.PASS, "<a href='"+result.getName()+".mov"+"'><span class='label info'>Download Video</span></a>");
+			TestUtils.Recorder.stop();
+				
+			}
+			else if(result.getStatus()==ITestResult.FAILURE)
+			{
+				logger.log(LogStatus.FAIL, result.getThrowable());
+				//Add Snapshots to the Report in case of failure
+				logger.log(LogStatus.FAIL, "<a href='"+result.getName()+".png"+"'><span class='label info'>Download Snapshot</span></a>");
+				//Add Video to the Report
+				logger.log(LogStatus.PASS, "<a href='"+result.getName()+".mov"+"'><span class='label info'>Download Video</span></a>");
+			}
+			else
+			{
+				logger.log(LogStatus.SKIP, "Test Skipped");
+			}
+			
              driver.quit();
      		//driver.close();
 			
 		}
     	//Login TCs
-		//@Test(priority=1)
+		@Test(priority=1) //[1-pass]
 		public void performValidLoginTest() throws IOException
 		{
 			String validUser=prop.getProperty("username");
@@ -65,7 +95,7 @@ public class LoginPageTest extends testBase {
 			Assert.assertEquals( Ar, true,"Login Fail , In correct Username Or Password");
 		}
 		
-		//@Test(priority=2,dataProvider="testLoginData")//,dataProvider="testLoginData"
+		@Test(priority=2,dataProvider="testLoginData")//,dataProvider="testLoginData" [4 fail]
 		public void CheckLoginwithInvalidPasswordOrmail(String mail,String pass) throws IOException//String fname,String lname
 		{
 		  loginPage.performLogin(mail,pass);
@@ -75,7 +105,7 @@ public class LoginPageTest extends testBase {
 			
 		}
 		//Forgot Password Functionality
-		@Test(priority=3)
+		@Test(priority=3) //[2-pass]
 		public void checkForgotPasswordFunctionality()
 		{
 			loginPage.checkForgotPassword();
@@ -84,7 +114,7 @@ public class LoginPageTest extends testBase {
 			
 		}
 		//login with Google
-		//@Test(priority=4)
+		@Test(priority=4)//[3-pass]
 		public void CheckLoginwithGoogle()
 		{
 			loginPage.getMainPage();
@@ -95,7 +125,7 @@ public class LoginPageTest extends testBase {
 			
 		}
 		//login with Twitter
-		//@Test(priority=5)
+		@Test(priority=5)//[4-pass]
 	    public void CheckLoginwithTwitter()
 		{
 		  loginPage.getMainPage();
@@ -106,7 +136,7 @@ public class LoginPageTest extends testBase {
 					
 		}
 	    //login with Phone
-	   // @Test(priority=6)
+	   @Test(priority=6) //[5-pass]
 		 public void CheckLoginwithPhoneNumber()
 			{
 			  loginPage.getMainPage();

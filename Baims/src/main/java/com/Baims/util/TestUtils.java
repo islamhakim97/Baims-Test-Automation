@@ -20,17 +20,19 @@ public class TestUtils extends testBase{
 	public TestUtils() throws IOException {
 		super();
 	}
-//	public static void TakePicture (String name) throws IOException
-//	{
-//		File srcFile=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-//		// the path to save screen shots
-//		FileUtils.copyFile(srcFile, new File("/Volumes/IslamHakim/AlgorizaTestAutomationInternship/FirstMonthProject/Baims Automation/Baims-Test-Automation/Baims/TestReport/"+name+".png"));
-//	}
-//	public static void TakeVideo(String videoname) throws ATUTestRecorderException
-//	{
-//		Recorder=new ATUTestRecorder("/Volumes/IslamHakim/AlgorizaTestAutomationInternship/FirstMonthProject/Baims Automation/Baims-Test-Automation/Baims/TestReport",videoname,false);
-//		
-//	}
+   //Take Video 
+	public static void TakePicture (String name) throws IOException
+	{
+		File srcFile=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		// the path to save screen shots
+		FileUtils.copyFile(srcFile, new File("/Volumes/IslamHakim/AlgorizaTestAutomationInternship/FirstMonthProject/Baims Automation/Baims-Test-Automation/Baims/TestReport/"+name+".png"));
+	}
+	//Take SnapShot 
+	public static void TakeVideo(String videoname) throws ATUTestRecorderException
+	{
+		Recorder=new ATUTestRecorder("/Volumes/IslamHakim/AlgorizaTestAutomationInternship/FirstMonthProject/Baims Automation/Baims-Test-Automation/Baims/TestReport",videoname,false);
+		
+	}
 	
 	public static Object[][]getDataFromExcel(String ExcelSheetename) throws IOException
 	{
