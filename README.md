@@ -38,7 +38,7 @@ Or you can simply download the code from here https://github.com/islamhakim97/Ba
   - Assert Login With Gmail Account .
   - Assert Login With Twitter Account .
   - Assert Login With Phone Number .
-  - Assert Login With Valid Mail and Password.
+  - Assert Login With Valid Mail and Password[Load Data From Excel Sheet].
   - Assert That User Can't Login With Invalid Username Or Password . 
   - Assert Forgot Password Functionality Works as Expected .
   
@@ -49,7 +49,7 @@ Or you can simply download the code from here https://github.com/islamhakim97/Ba
   - TestNG [https://testng.org/doc/]
   - Maven Project [https://maven.apache.org/]
   - Page Opject Model Design Pattern [https://www.selenium.dev/documentation/test_practices/encouraged/page_object_models/]
-  -- Extent Reports [https://www.extentreports.com/]
+  - Extent Reports [https://www.extentreports.com/]
   
 ## About Software Tester
   <div align="center">
