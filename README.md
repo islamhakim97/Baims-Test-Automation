@@ -22,11 +22,16 @@
 Or you can simply download the code from here https://github.com/islamhakim97/Baims-Test-Automation/archive/refs/heads/master.zip
 <li> Open the project on your Eclipse 
 <li> Click on the run button
+<li> Make Sure To Change the Location  Of Excel Sheet 'LoginData.xlsx' On Utils.java .
+<li> Make Sure To Configure ATUTestRecordern Jar To Your Project Build Path [https://drive.google.com/drive/folders/0B7rZvkq9tkwPUHRXNU8wQjRYVDA?resourcekey=0-c0dQAyEDmWpY2qUgAmpH6A] So You Can Record Videos For Your Test Cases.
   
 ## Prerequisites
 - Java Development Kit (JDK) - JDK 11 .
 - Eclipse IDE for Enterprise Java and Web Developers - latest portable version: http://www.eclipse.org/downloads/eclipse-packages/.
 - TestNG Eclipse plugin - Latest Version: https://testng.org/doc/download.html.
+- Load Data From Report : Excel Sheet Data Provider.
+
+
 
 # Features
   ## Baims
@@ -44,6 +49,7 @@ Or you can simply download the code from here https://github.com/islamhakim97/Ba
   - TestNG [https://testng.org/doc/]
   - Maven Project [https://maven.apache.org/]
   - Page Opject Model Design Pattern [https://www.selenium.dev/documentation/test_practices/encouraged/page_object_models/]
+  -- Extent Reports [https://www.extentreports.com/]
   
 ## About Software Tester
   <div align="center">
