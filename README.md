@@ -31,7 +31,7 @@ Or you can simply download the code from here https://github.com/islamhakim97/Ba
 <li> 3- Change the Location  Of Saving Snapshots . </li>
 <h2>On ReportConfig.java  Make Sure To :</h2> 
 <li> 1- Change the Location  Of Saving The Extent Report.html File  .
-<li> Click on the run button.
+<h4> OPentestng.xml file  and Right Click on it then click run as testNG Suit.</h4> 
 
 
 <li> Make Sure To Configure <a href ="https://drive.google.com/drive/folders/0B7rZvkq9tkwPUHRXNU8wQjRYVDA?resourcekey=0-c0dQAyEDmWpY2qUgAmpH6A" >ATUTestRecorder Jar</a> To Your Project Build Path , So You Can Record Videos For Your Test Cases.
@@ -58,7 +58,7 @@ Or you can simply download the code from here https://github.com/islamhakim97/Ba
   - Assert That Forgot Password Link Is Clickable.
   - Assert Forgot Password Functionality Works as Expected .
   - Assert That User Can't Reset Password With In Correct Code.
- 
+ ## Perform Cross Browser Testing Throughout (chrome,Firefox,Safari) browsers From [testNG.xml] File by UnCommenting the two tests for the two other       browsers(firefox and safari).
   
 ## Languages
   - JAVA
