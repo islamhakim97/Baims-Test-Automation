@@ -34,13 +34,20 @@ Or you can simply download the code from here https://github.com/islamhakim97/Ba
 
 
 # Features
-  ## Baims
+  ## Baims Login & Register Page:
+  - Assert That Login Using Mail Is Clickable.
   - Assert Login With Gmail Account .
   - Assert Login With Twitter Account .
+  - Assert The Phone Number Formate.
   - Assert Login With Phone Number .
+  - Assert The Format Of Entered Mail .
+  - Assert That User vCan't sign in with Empty Fields.
   - Assert Login With Valid Mail and Password[Load Data From Excel Sheet].
   - Assert That User Can't Login With Invalid Username Or Password . 
+  - Assert That Forgot Password Link Is Clickable.
   - Assert Forgot Password Functionality Works as Expected .
+  - Assert That User Can't Reset Password With In Correct Code.
+ 
   
 ## Languages
   - JAVA
