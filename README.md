@@ -21,9 +21,20 @@
 
 Or you can simply download the code from here https://github.com/islamhakim97/Baims-Test-Automation/archive/refs/heads/master.zip
 <li> Open the project on your Eclipse 
-<li> Click on the run button
-<li> Make Sure To Change the Location  Of Excel Sheet 'LoginData.xlsx' On Utils.java .
-<li> Make Sure To Configure ATUTestRecordern Jar To Your Project Build Path [https://drive.google.com/drive/folders/0B7rZvkq9tkwPUHRXNU8wQjRYVDA?resourcekey=0-c0dQAyEDmWpY2qUgAmpH6A] So You Can Record Videos For Your Test Cases.
+<li> Click on the run button.
+<li><h2>On TestBase.java  Make Sure To :</h2>
+<li> 1- Change the Location  Of config.properties File  .
+<li> 2- Change the Location  Of Geko Driver .
+<li> 3- Change the Location  Of FireFoxDriver .
+<li><h2>On TestUtils.java  Make Sure To :</h2>
+<li> 1- Change the Location  Of Excel Sheet 'LoginData.xlsx' .
+<li> 2- Change the Location  Of Saving Videos .
+<li> 3- Change the Location  Of Saving Snapshots .
+<li><h2>On ReportConfig.java  Make Sure To :</h2>
+<li> 1- Change the Location  Of Saving The Extent Report.html File  .
+
+
+<li> Make Sure To Configure <a href ="https://drive.google.com/drive/folders/0B7rZvkq9tkwPUHRXNU8wQjRYVDA?resourcekey=0-c0dQAyEDmWpY2qUgAmpH6A" >ATUTestRecorder Jar</a> To Your Project Build Path , So You Can Record Videos For Your Test Cases.
   
 ## Prerequisites
 - Java Development Kit (JDK) - JDK 11 .
