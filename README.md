@@ -22,15 +22,15 @@
 Or you can simply download the code from here https://github.com/islamhakim97/Baims-Test-Automation/archive/refs/heads/master.zip
 <li> Open the project on your Eclipse 
 <li> Click on the run button.
-<li><h2>On TestBase.java  Make Sure To :</h2>
-<li> 1- Change the Location  Of config.properties File  .
-<li> 2- Change the Location  Of Geko Driver .
-<li> 3- Change the Location  Of FireFoxDriver .
-<li><h2>On TestUtils.java  Make Sure To :</h2>
+<li><h2>On TestBase.java  Make Sure To :</h2></li>
+<li> 1- Change the Location  Of config.properties File  .</li>
+<li> 2- Change the Location  Of Geko Driver .</li>
+<li> 3- Change the Location  Of FireFoxDriver .</li>
+<li><h2>On TestUtils.java  Make Sure To :</h2> </li>
 <li> 1- Change the Location  Of Excel Sheet 'LoginData.xlsx' .
-<li> 2- Change the Location  Of Saving Videos .
-<li> 3- Change the Location  Of Saving Snapshots .
-<li><h2>On ReportConfig.java  Make Sure To :</h2>
+<li> 2- Change the Location  Of Saving Videos .</li>
+<li> 3- Change the Location  Of Saving Snapshots . </li>
+<li><h2>On ReportConfig.java  Make Sure To :</h2> </li>
 <li> 1- Change the Location  Of Saving The Extent Report.html File  .
 
 
